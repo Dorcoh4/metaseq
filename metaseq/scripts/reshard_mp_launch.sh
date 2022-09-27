@@ -18,7 +18,7 @@ do
   echo "python -m metaseq.scripts.reshard_mp $prefix $save_dir --part $i --target-ddp-size $tgt_size --drop_optimizer_state True"
   jname=reshard_mp"$i"_ddp"$tgt_size"
   echo $jname
-  sbatch --job-name=$jname \
+  srun --job-name=$jname \
     --gpus-per-node=8 --nodes=1 --ntasks-per-node=1 --cpus-per-task=64 --partition=studentbatch\
    --output "$save_dir"/"$jname".log \
     python -m metaseq.scripts.reshard_mp $prefix $save_dir --part $i --target-ddp-size $tgt_size --drop_optimizer_state True &
