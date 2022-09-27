@@ -157,7 +157,7 @@ def do_setup(package_data):
             "iopath",
             "ipdb",
             "ipython",
-            # "Jinja2==3.1.1",  # for evals
+            "Jinja2==3.1.1",  # for evals
             "markupsafe",  # for evals
             "more_itertools",
             "mypy",
